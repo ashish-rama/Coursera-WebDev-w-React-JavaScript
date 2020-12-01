@@ -7,12 +7,8 @@ class DishDetail extends Component {
     }
 
     renderDish(dish) {
-        if(dish == null) {
-            return (
-                <div></div>
-            );
-        } else {
-            return (
+        return (
+            <div className="col-12 col-md-5 m-1">
                 <Card>
                     <CardImg width='100%' src={dish.image} alt={dish.name} />
                     <CardBody>
@@ -20,17 +16,18 @@ class DishDetail extends Component {
                         <CardText>{dish.description}</CardText>
                     </CardBody>
                 </Card>
-            )
-        }
+            </div>
+        )
+        
     }
 
-    renderComments(selectedDish) {
-        if(selectedDish != null && selectedDish.comments != null) {
-            const showcmnts = selectedDish.comments.map((cmnt) => {
+    renderComments(dish) {
+        if(dish.comments != null) {
+            const showComments = dish.comments.map((comment) => {
                 return (
-                    <ul key={cmnt.id} className="list-unstyled">
-                        <li className="comment">{cmnt.comment}</li>
-                        <li className="author">--{cmnt.author},
+                    <ul key={comment.id} className="list-unstyled">
+                        <li className="comment">{comment.comment}</li>
+                        <li className="author">--{comment.author},
                         &nbsp;
                         {
                             new Intl.DateTimeFormat(
@@ -40,7 +37,7 @@ class DishDetail extends Component {
                                     month: 'short',
                                     day: '2-digit'
                                 }
-                            ).format(new Date(Date.parse(cmnt.date)))
+                            ).format(new Date(Date.parse(comment.date)))
                         }
                         </li>
                     </ul>
@@ -50,7 +47,7 @@ class DishDetail extends Component {
             return(
                 <div className='col-12 col-md-5 m-1'>
                     <h4> Comments </h4>
-                    <div>{showcmnts}</div>
+                    <div>{showComments}</div>
                 </div>
             );
         } else {
@@ -62,14 +59,21 @@ class DishDetail extends Component {
     }
 
     render() {
-        return(
-            <div className='row'>
-                <div className="col-12 col-md-5 m-1">
-                    {this.renderDish(this.props.selectedDish)}
+        if(this.props.dish != null) {
+            return(
+                <div className='container'>
+                    <div className="row">
+                        {this.renderDish(this.props.dish)}
+                        {this.renderComments(this.props.dish)}
+                    </div>
                 </div>
-                {this.renderComments(this.props.selectedDish)}
-            </div>
-        );
+            );
+        } else {
+            return(
+                <div></div>
+            )
+        }
+        
     }
 }
 
