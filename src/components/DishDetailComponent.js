@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
 
 class DishDetail extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     renderDish(dish) {
         return (
             <div className="col-12 col-md-5 m-1">
                 <Card>
-                    <CardImg width='100%' src={dish.image} alt={dish.name} />
+                    <CardImg top src={dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
@@ -23,31 +20,19 @@ class DishDetail extends Component {
 
     renderComments(dish) {
         if(dish.comments != null) {
-            const showComments = dish.comments.map((comment) => {
-                return (
-                    <ul key={comment.id} className="list-unstyled">
-                        <li className="comment">{comment.comment}</li>
-                        <li className="author">--{comment.author},
-                        &nbsp;
-                        {
-                            new Intl.DateTimeFormat(
-                                'en-US',
-                                {
-                                    year: 'numeric',
-                                    month: 'short',
-                                    day: '2-digit'
-                                }
-                            ).format(new Date(Date.parse(comment.date)))
-                        }
-                        </li>
-                    </ul>
-                )
-            });
-    
             return(
-                <div className='col-12 col-md-5 m-1'>
-                    <h4> Comments </h4>
-                    <div>{showComments}</div>
+                <div className="col-12 col-md-5 m-1">
+                    <h4>Comments</h4>
+                    <ul className="list-unstyled">
+                        {dish.comments.map((comment) => {
+                            return(
+                                <li key={comment.id}>
+                                    <p>{comment.comment}</p>
+                                    <p>-- {comment.author}, {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
             );
         } else {
