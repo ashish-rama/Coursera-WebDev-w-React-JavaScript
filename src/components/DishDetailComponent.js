@@ -14,7 +14,6 @@ import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
                 </Card>
             </div>
         )
-        
     }
 
     function RenderComments({dish}) {
@@ -57,7 +56,6 @@ import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
                 <div></div>
             )
         }
-        
     }
 
 export default DishDetail;
