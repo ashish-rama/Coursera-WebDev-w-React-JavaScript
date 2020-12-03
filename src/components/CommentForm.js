@@ -42,7 +42,7 @@ class CommentForm extends Component {
                                 <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                                     <Row className="form-group">
                                         <Label htmlFor="rating">Rating</Label>
-                                        <Col md={10}>
+                                        <Col md={12}>
                                             <Control.select model=".rating" name="rating" className="form-control">
                                                 <option>1</option>
                                                 <option>2</option>
@@ -53,8 +53,8 @@ class CommentForm extends Component {
                                         </Col>
                                     </Row>
                                     <Row className="form-group">
-                                        <Label htmlFor="author" md={2}>Your Name</Label>
-                                        <Col md={10}>
+                                        <Label htmlFor="author">Your Name</Label>
+                                        <Col md={12}>
                                             <Control.text model=".author" id="author" name="author" placeholder="Author"
                                                 className="form-control"
                                                 validators={{
@@ -72,8 +72,8 @@ class CommentForm extends Component {
                                         </Col>
                                     </Row>
                                     <Row className="form-group">
-                                        <Label htmlFor="feedback" md={2}>Your Feedback</Label>
-                                        <Col md={10}>
+                                        <Label htmlFor="feedback">Your Feedback</Label>
+                                        <Col md={12}>
                                             <Control.textarea model=".comment" id="comment" name="comment" rows="6"
                                                 className="form-control"
                                                 validators={{
