@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# [Front-End Web Development with React](https://www.coursera.org/learn/front-end-react/home/welcome): Restaurant Website
+
+Code from Coursera (by The Hong Kong University of Science and Technology) and Ashish Ramachandran // 2020
+
+## Introduction
+
+The course focused on the development of a website for a hypothetical Indian fusion restaurant. As the students progressed through the course's modules and homework assignments, this site would be updated with the newly learned concepts. 
+
+## About the Course
+
+This course explores Javascript based front-end application development, and in particular the React library. The course provides an introduction to:
+- **JavaScript ES6** for developing React application
+- Use of **Reactstrap** for Bootstrap 4-based responsive UI design
+- React **components**
+- **React router** and its use in developing single-page applications
+- Designing controlled forms
+- **Flux architecture** and **Redux** to develop **React-Redux** powered applications
+- Use **Fetch** for client-server communication and the use of **REST API** on the server side
+- React **animation support**
+
+Course site is here: [Front-End Web Development with React](https://www.coursera.org/learn/front-end-react/home/welcome)
+
+
+## Concepts Learned
+
+After the course, students are able to:
+- Create client-side Javascript application development and the React library
+- Implement single page applications in React
+- Use various React features including components and forms
+- Implement a functional front-end web application using React
+- Use Reactstrap for designing responsive React applications
+- Use Redux to design the architecture for a React-Redux application
+
+## Running the Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+The project contains server and client side components. 
 
-In the project directory, you can run:
+To start the server, you can run:
+```
+cd json-server
+json-server --watch db.json -d 2000 -p 3001  
+```
 
-### `yarn start`
+This will start the json server monitoring the "db.json" file with a server delay of 2 seconds (arbitrary and not necessary) and running on port 3001. 
+
+To start the client, in the project directory, you can run:
+
+```
+npm install
+yarn start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As part of the course, we also created a webpack so opening to [http://localhost:3001](http:/localhost:3001) would also show the site.
 
-### `yarn test`
+## Further Steps
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Future development will include constructing a cleaner UI, exploring react components further and integrating more features around the server-side.
 
-### `yarn build`
+## Media
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Home](public/assets/images/Home.png)
+![Menu](public/assets/images/Menu.png)
+![Menu Comment Modal](public/assets/images/Menu-Comment-Modal.png)
